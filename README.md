@@ -52,7 +52,7 @@ Each client independently trains disease-specific models using local data:
 
 Instead of sharing raw patient records, clients exchange only model logits using Federated Model Distillation (FedMD).
 
-A global student model is then trained for multi-label disease prediction.
+A global student model is trained to perform multi-label disease prediction.
 
 ---
 
@@ -123,7 +123,7 @@ This staged workflow mimics real-world healthcare diagnosis pipelines.
 Due to GitHub storage limitations, datasets are maintained separately.
 
 Dataset Repository:
-[https://github.com/avankrish/Multi-Disease-FL-Dataset-Archive.git]
+[https://github.com/avankrish/Multi-Disease-FL-Dataset-Archive]
 
 ---
 
@@ -235,11 +235,10 @@ python run_system.py
 
 ---
 
-## Authors
+## Maintainer
 
 * Avanthika K
-* Sivabalakrishnan M
-* Haripriya Yogambaram
+
 
 ---
 
