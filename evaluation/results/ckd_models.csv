@@ -1,0 +1,5 @@
+Model,Accuracy,Precision,Recall,F1_score,Notes
+Logistic Regression,0.95,0.979166667,0.94,0.959183673,Baseine Linear Model. High accuracy but biased due to class imbalance
+MLP,0.85,0.839285714,0.94,0.886792453,Captures non-linear interactions (eGFR + albumin). Better balanced predictions
+Logistic Regression,0.95,0.9791666666666666,0.94,0.9591836734693877,Baseine Linear Model
+MLP,0.8875,0.8867924528301887,0.94,0.912621359223301,Captures non-linear interactions (eGFR + albumin)

@@ -1,0 +1,9 @@
+"Model	Accuracy	Precision	Recall	F1_score	Notes",,,,,
+Logistic Regression,0.625,0.651376147,0.696078431,0.672985782,Linear baseline; limited ability to capture complex interactions
+Random Forest,0.652173913,0.697916667,0.656862745,0.676767677,Captures non-linear risk factor interactions; robust tabular model
+Logistic Regression,0.625,0.651376147,0.696078431,0.672985782,Linear baseline; limited ability to capture complex interactions
+Random Forest,0.652173913,0.697916667,0.656862745,0.676767677,Captures non-linear risk factor interactions; robust tabular model
+Gradient Boosting,0.652173913,0.679245283,0.705882353,0.692307692,Boosted ensemble capturing complex non-linear risk patterns
+Logistic Regression,0.625,0.651376147,0.696078431,0.672985782,Linear baseline; limited ability to capture complex interactions
+Random Forest,0.652173913,0.697916667,0.656862745,0.676767677,Captures non-linear risk factor interactions; robust tabular model
+Gradient Boosting,0.652173913,0.679245283,0.705882353,0.692307692,Boosted ensemble capturing complex non-linear risk patterns

@@ -1,0 +1,5 @@
+"Model	Accuracy	Precision	Recall	F1_score	Notes",,,,,
+Logistic Regression,0.76534296,0.713286713,0.534031414,0.610778443,Strong baseline due to glucose dominance.Strong baseline performance due to glucose dominance; stable and interpretable
+MLP,0.76534296,0.729323308,0.507853403,0.598765432,"Captures interactions among glucose, BMI, and age.Comparable performance; limited improvement from non-linear interactions"
+Logistic Regression,0.76534296,0.713286713,0.534031414,0.610778443,Strong baseline due to glucose dominance
+MLP,0.75631769,0.642857143,0.659685864,0.651162791,"Captures interactions among glucose, BMI, and age"
