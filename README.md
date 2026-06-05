@@ -1,57 +1,86 @@
-# Privacy-Preserving Federated Learning Framework for Multi-Disease Prediction
+# Federated Medical AI for Multi-Disease Prediction
 
-A scalable and privacy-preserving healthcare prediction framework using Federated Learning and deep learning-based multimodal diagnosis.
+A privacy-preserving federated learning framework for multi-disease prediction using clinical data, ECG signal analysis, and medical imaging.
 
-## Overview
+---
 
-This project proposes a dual-stage intelligent healthcare framework for predicting multiple diseases while preserving patient privacy. The system combines Federated Model Distillation (FedMD) with deep learning-based medical signal and image analysis to support secure and scalable medical diagnosis.
+## Project Overview
 
-The framework performs:
+This project focuses on building a scalable and privacy-aware healthcare AI framework capable of predicting multiple diseases without sharing sensitive patient data between institutions.
 
-* Stage-1: Federated multi-disease screening using structured clinical data
-* Stage-2: Confirmatory diagnosis using ECG signal analysis and ultrasound imaging
+The system combines:
 
-The system supports prediction and validation for:
+* Federated Learning
+* Federated Model Distillation (FedMD)
+* Deep Learning
+* Multimodal Medical Analysis
+
+to create a dual-stage diagnostic pipeline inspired by real-world clinical workflows.
+
+The framework supports prediction and validation for:
 
 * Chronic Kidney Disease (CKD)
 * Diabetes Mellitus
 * Heart Disease
 
+---
+
 ## Key Features
 
 * Privacy-preserving federated learning architecture
-* Multi-disease prediction using FedMD
+* Multi-disease screening system
 * No raw patient data sharing
-* Multimodal diagnosis pipeline
+* Federated Model Distillation (FedMD)
 * ECG-based heart disease validation using 1D-CNN
 * Kidney ultrasound analysis using 2D-CNN
-* Scalable modular architecture for adding new disease domains
-* Clinically inspired staged diagnosis workflow
+* Modular and scalable healthcare AI pipeline
+* Multimodal diagnosis workflow
 
-## System Architecture
+---
 
-The proposed framework follows a dual-stage diagnostic pipeline:
+## System Workflow
 
-### Stage-1: Federated Screening
+### Stage 1 — Federated Disease Screening
 
-* Local clients train disease-specific models independently
-* Clients share only logits on a public reference dataset
-* FedMD aggregates knowledge without sharing raw data
-* A global student model performs multi-label disease screening
+Clinical datasets are distributed across multiple federated clients.
 
-### Stage-2: Confirmatory Diagnosis
+Each client independently trains disease-specific models using local data:
 
-* ECG signal analysis validates heart disease predictions
-* Ultrasound imaging validates kidney abnormalities
-* Triggered only for high-risk cases identified in Stage-1
+* CKD Client → Multi-Layer Perceptron (MLP)
+* Diabetes Client → Logistic Regression
+* Heart Disease Client → Gradient Boosting
 
-## Technologies Used
+Instead of sharing raw patient records, clients exchange only model logits using Federated Model Distillation (FedMD).
 
-### Programming Languages
+A global student model is then trained for multi-label disease prediction.
+
+---
+
+### Stage 2 — Confirmatory Diagnosis
+
+High-risk cases identified during Stage 1 are validated using disease-specific deep learning models.
+
+#### Heart Disease Validation
+
+* ECG signal analysis
+* 1D Convolutional Neural Network (1D-CNN)
+
+#### Kidney Disease Validation
+
+* Ultrasound image analysis
+* 2D Convolutional Neural Network (2D-CNN)
+
+This staged workflow mimics real-world healthcare diagnosis pipelines.
+
+---
+
+## Tech Stack
+
+### Programming Language
 
 * Python
 
-### Machine Learning / Deep Learning
+### Machine Learning & Deep Learning
 
 * TensorFlow
 * Keras
@@ -62,57 +91,41 @@ The proposed framework follows a dual-stage diagnostic pipeline:
 * Multi-Layer Perceptron (MLP)
 * Logistic Regression
 * Gradient Boosting
-* 1D Convolutional Neural Network (1D-CNN)
-* 2D Convolutional Neural Network (2D-CNN)
+* 1D-CNN
+* 2D-CNN
 
-### Data Processing & Visualization
+### Libraries
 
-* Pandas
 * NumPy
+* Pandas
 * Matplotlib
 * Seaborn
 
-## Dataset Information
+---
 
-The project utilizes multiple clinical and medical datasets for disease prediction and confirmatory diagnosis.
+## Datasets Used
 
-### Stage-1 Clinical Datasets
+### Clinical Datasets
 
 * Chronic Kidney Disease Dataset
 * Diabetes Dataset
 * Heart Disease Dataset
 
-### Stage-2 Datasets
+### Medical Signal & Imaging Datasets
 
 * MIT-BIH Arrhythmia ECG Dataset
 * Kidney Ultrasound Dataset
 
+---
+
 ## Dataset Repository
 
-Due to GitHub file size limitations, the datasets are maintained separately.
+Due to GitHub storage limitations, datasets are maintained separately.
 
 Dataset Repository:
 [https://github.com/avankrish/Multi-Disease-FL-Dataset-Archive.git]
 
-## Performance Results
-
-### Stage-1 Federated Screening
-
-| Metric               | Score  |
-| -------------------- | ------ |
-| Exact Match Accuracy | 91.67% |
-| Hamming Accuracy     | 97.22% |
-| Micro F1-Score       | 0.952  |
-| Macro F1-Score       | 0.947  |
-
-### Stage-2 Confirmatory Models
-
-| Model             | Accuracy |
-| ----------------- | -------- |
-| ECG 1D-CNN        | 98.13%   |
-| Ultrasound 2D-CNN | 100.00%* |
-
-* Evaluated on the tested dataset.
+---
 
 ## Project Structure
 
@@ -131,6 +144,8 @@ federated_medical_ai/
 ├── requirements.txt
 └── run_system.py
 ```
+
+---
 
 ## Installation
 
@@ -166,30 +181,59 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+---
+
 ## Running the Project
 
-Run the complete framework:
+Run the complete system:
 
 ```bash
 python run_system.py
 ```
 
-## Research Contribution
+---
 
-This project introduces:
+## Results
 
-* A dual-stage federated healthcare framework
-* Privacy-preserving multi-disease prediction
-* Multimodal confirmatory diagnosis
-* A scalable and modular medical AI pipeline
+### Stage 1 — Federated Multi-Disease Screening
+
+| Metric               | Score  |
+| -------------------- | ------ |
+| Exact Match Accuracy | 91.67% |
+| Hamming Accuracy     | 97.22% |
+| Micro F1-Score       | 0.952  |
+| Macro F1-Score       | 0.947  |
+
+### Stage 2 — Confirmatory Models
+
+| Model             | Accuracy |
+| ----------------- | -------- |
+| ECG 1D-CNN        | 98.13%   |
+| Ultrasound 2D-CNN | 100.00%* |
+
+* Evaluated on the tested dataset.
+
+---
+
+## Project Highlights
+
+* Developed a dual-stage federated healthcare AI pipeline
+* Implemented privacy-preserving knowledge sharing using FedMD
+* Combined structured clinical data with medical signals and imaging
+* Designed a scalable architecture for future disease expansion
+* Applied multimodal deep learning for confirmatory diagnosis
+
+---
 
 ## Future Improvements
 
-* Explainable AI (XAI) integration
-* Differential Privacy (DP)
+* Explainable AI (XAI)
+* Differential Privacy integration
 * Secure Multi-Party Computation (SMPC)
-* Personalized medical recommendations
+* Personalized healthcare recommendations
 * Clinical decision support integration
+
+---
 
 ## Authors
 
@@ -197,12 +241,14 @@ This project introduces:
 * Sivabalakrishnan M
 * Haripriya Yogambaram
 
-## Reference
+---
 
-Based on the research paper:
+## Note
 
-"Privacy Preserving and Scalable Federated Learning Framework for Multi-Disease Prediction with Staged Medical Diagnosis"
+This repository represents a research-oriented healthcare AI project focused on federated learning and multimodal disease diagnosis.
+
+---
 
 ## License
 
-This project is intended for research and educational purposes.
+This project is intended for educational and research purposes.
