@@ -82,9 +82,15 @@ This staged workflow mimics real-world healthcare diagnosis pipelines.
 
 ### Machine Learning & Deep Learning
 
-* TensorFlow
-* Keras
-* Scikit-learn
+* PyTorch 2.10.0
+* Scikit-learn 1.8.0
+
+### Software Environment
+
+* Python 3.14.3
+* PyTorch 2.10.0
+* scikit-learn 1.8.0
+* NumPy 2.4.1
 
 ### Models Used
 
@@ -96,7 +102,7 @@ This staged workflow mimics real-world healthcare diagnosis pipelines.
 
 ### Libraries
 
-* NumPy
+* NumPy 2.4.1
 * Pandas
 * Matplotlib
 * Seaborn
@@ -146,7 +152,52 @@ federated_medical_ai/
 ```
 
 ---
+## Reproducing Results
 
+1. Train client models:
+```bash
+python training/train_ckd.py
+python training/train_diabetes.py
+python training/train_heart.py
+```
+
+2. Generate FedMD logits:
+```bash
+python fedmd/generate_logits_ckd.py
+python fedmd/generate_logits_diabetes.py
+python fedmd/generate_logits_heart.py
+```
+
+3. Aggregate logits and train student:
+```bash
+python fedmd/server_aggregate.py
+python fedmd/train_student.py
+```
+
+4. Run Stage-1 evaluation:
+```bash
+python inference/run_stage1_test.py
+```
+
+5. Run ablation study:
+```bash
+python fedmd/run_5round_variance_test.py
+```
+
+6. Run Stage-2 ECG model:
+```bash
+python stage_2/heart_ecg/train.py
+```
+
+7. Run Stage-2 ultrasound model:
+```bash
+python stage_2/kidney_ultrasound/train.py
+```
+
+## Dataset Repository
+
+Clinical datasets and public reference data:
+https://github.com/avankrish/Multi-Disease-FL-Dataset-Archive
 ## Installation
 
 Clone the repository:
